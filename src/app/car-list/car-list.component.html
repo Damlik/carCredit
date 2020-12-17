@@ -1,0 +1,12 @@
+<div *ngFor="let carType of carTypeList">
+  <div>
+    <span>{{carType}}</span>
+    <div *ngFor="let car of carList[carType]">
+      <div class="item">
+        <span>{{car.quantity}}</span>
+        <span>{{car.model}}</span>
+        <span>{{car.price}}</span>
+      </div>
+    </div>
+  </div>
+</div>
