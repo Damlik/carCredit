@@ -9,8 +9,7 @@ import { HttpService } from "../services/http.service";
 
 export class CarListComponent implements OnInit {
 
-  public carList: any;
-  public carTypeList: any;
+  public manufacturers: any;
 
   constructor(private httpService : HttpService) {
   }
@@ -18,8 +17,7 @@ export class CarListComponent implements OnInit {
 
   ngOnInit(): void {
     this.httpService.getCarList().subscribe((data: any) => {
-      this.carList = data.carList;
-      this.carTypeList = Object.keys(data.carList);
+      this.manufacturers = data.manufacturers;
     })
   }
 

@@ -1,0 +1,48 @@
+.wrapper-car-list {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.block {
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(2, 130px);
+  justify-content: space-between;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.block span {
+  text-transform: uppercase;
+}
+
+.link {
+  color: #ff5200;
+  text-decoration: none;
+}
+
+.items-wrapper {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  grid-gap: 20px;
+  justify-content: space-between;
+}
+
+.item {
+  color: black;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 10px;
+  width: 230px;
+  border: 3px solid white;
+  border-radius: 20px;
+}
+
+.item img {
+  margin: 0 auto;
+  width: 200px;
+}

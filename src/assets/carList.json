@@ -1,49 +1,54 @@
 {
-  "carList": {
-    "bmw": [
-      {
-        "imgSrc": "/img/",
-        "manufacturer": "bmw",
-        "model": "x1",
-        "price": "4 192 999",
-        "quantity": "200",
-        "enginePower": "200 Л.С",
-        "engineType": "бензин",
-        "driveUnit": "4x2",
-        "driveUnitType": "передний",
-        "engineVolume": "2.0",
-        "Transmission": "АКПП",
-        "TransmissionSteps": "6 ступеней",
-        "class": "comfort"
-      },
-      {
-        "manufacturer": "bmw",
-        "model": "x2",
-        "price": "5 192 999",
-        "quantity": "300",
-        "enginePower": "230 Л.С",
-        "engineType": "дизель",
-        "driveUnit": "4x2",
-        "driveUnitType": "задний",
-        "engineVolume": "2.0",
-        "Transmission": "АКПП",
-        "TransmissionSteps": "6 ступеней",
-        "class": "comfort"
-      },
-      {
-        "manufacturer": "bmw",
-        "model": "x6",
-        "price": "9 192 999",
-        "quantity": "300",
-        "enginePower": "330 Л.С",
-        "engineType": "дизель",
-        "driveUnit": "4x4",
-        "driveUnitType": "полный",
-        "engineVolume": "3.0",
-        "Transmission": "АКПП",
-        "TransmissionSteps": "6 ступеней",
-        "class": "comfort"
-      }
-    ]
-  }
+  "manufacturers": [
+    {
+      "name": "bmw",
+      "carList": [
+        {
+          "imgSrc": "assets/img/bmw-x1.png",
+          "manufacturer": "bmw",
+          "model": "x1",
+          "price": 4192999,
+          "quantity": 200,
+          "enginePower": "200 Л.С",
+          "engineType": "бензин",
+          "driveUnit": "4x2",
+          "driveUnitType": "передний",
+          "engineVolume": "2.0",
+          "Transmission": "АКПП",
+          "TransmissionSteps": "6 ступеней",
+          "class": "comfort"
+        },
+        {
+          "imgSrc": "assets/img/bmw-x1.png",
+          "manufacturer": "bmw",
+          "model": "x2",
+          "price": 5192999,
+          "quantity": 300,
+          "enginePower": "230 Л.С",
+          "engineType": "дизель",
+          "driveUnit": "4x2",
+          "driveUnitType": "задний",
+          "engineVolume": "2.0",
+          "Transmission": "АКПП",
+          "TransmissionSteps": "6 ступеней",
+          "class": "comfort"
+        },
+        {
+          "imgSrc": "assets/img/bmw-x1.png",
+          "manufacturer": "bmw",
+          "model": "x6",
+          "price": 9192999,
+          "quantity": 300,
+          "enginePower": "330 Л.С",
+          "engineType": "дизель",
+          "driveUnit": "4x4",
+          "driveUnitType": "полный",
+          "engineVolume": "3.0",
+          "Transmission": "АКПП",
+          "TransmissionSteps": "6 ступеней",
+          "class": "comfort"
+        }
+      ]
+    }
+  ]
 }
