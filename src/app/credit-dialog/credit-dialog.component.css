@@ -53,3 +53,8 @@
   grid-template-columns: 100px 455px 170px;
   grid-gap: 30px;
 }
+
+.grid-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

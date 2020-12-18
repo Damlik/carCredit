@@ -33,41 +33,40 @@
     <div class="calculation">
       <div>
         <h4>Первоначальный взнос</h4>
-        <div>
-          <span></span>
-          <span></span>
+        <div class="grid-values">
+          <span>{{valueInitialFee | currency : 'RUB' : 'symbol-narrow'}}</span>
+          <span>{{percentValueInitialFee}}%</span>
         </div>
-        <input type="range">
+        <input (input)="changeValueInitialFee($event)" min="{{minInitialFee}}" max="{{maxInitialFee}}" step="{{stepInitialFee}}" value="{{valueInitialFee}}" type="range">
       </div>
       <div>
         <h4>Готов платить в месяц</h4>
-        <div>
-          <span></span>
-          <span></span>
+        <div class="grid-values">
+          <span>До {{valuePayPerMonth | currency: 'RUB': 'symbol-narrow'}}</span>
         </div>
-        <input type="range">
+        <input (input)="changeValuePayPerMonth($event)" min="1000" max="{{maxvaluePayPerMonth}}" step="1000" value="{{valuePayPerMonth}}" type="range">
       </div>
       <div>
         <h4>Срок кредита</h4>
-        <div>
-          <span></span>
-          <span></span>
+        <div class="grid-values">
+          <span>{{valueTermCredit}} месяцев</span>
+          <span>{{declOfNum(year)}}</span>
         </div>
-        <input type="range">
+        <input (input)="changeValueTermCredit($event)" max="{{maxValueTermCredit}}" min="12" step="12" value="{{valueTermCredit}}" type="range">
       </div>
     </div>
     <div class="creditApp">
       <div>
         <div>Сумма выплат</div>
-        <div></div>
+        <div>от {{this.summPaid}}₽</div>
       </div>
       <div>
         <div>Процентная ставка</div>
-        <div></div>
+        <div>от {{this.percentRate}}%</div>
       </div>
       <div>
         <div>Платёж в месяц</div>
-        <div></div>
+        <div>от {{this.paidPerMonth}} ₽/мес</div>
       </div>
       <button class="button">Отправить заявку</button>
     </div>
