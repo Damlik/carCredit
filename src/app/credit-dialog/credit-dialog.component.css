@@ -1,0 +1,55 @@
+.credit-wrapper {
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+.info-wrapper {
+  display: grid;
+  grid-template-columns: 220px 600px;
+}
+
+.img img {
+  width: 200px;
+}
+
+.info .info-child-1 {
+  display: grid;
+  grid-template-columns: 446px 105px 50px;
+}
+
+.info .info-child-2 {
+  display: grid;
+  grid-template-columns: 103px 66px 200px 156px;
+  grid-gap: 25px;
+}
+.info .info-child-3 {
+  display: grid;
+  grid-template-columns: 103px 66px 200px 135px 1fr;
+  grid-gap: 25px;
+}
+
+.street {
+  display: inline-block;
+  width: 835px;
+  text-align: end;
+}
+
+.margin-bottom {
+  margin-bottom: 20px;
+}
+
+.calculation {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.creditApp {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.credit-question {
+  display: grid;
+  grid-template-columns: 100px 455px 170px;
+  grid-gap: 30px;
+}

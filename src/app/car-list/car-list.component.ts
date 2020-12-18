@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from "../services/http.service";
+import { HttpService } from '../services/http.service';
+import {MatDialog} from '@angular/material/dialog';
+import {CreditDialogComponent} from '../credit-dialog/credit-dialog.component';
+
 
 @Component({
   selector: 'app-car-list',
@@ -9,16 +12,20 @@ import { HttpService } from "../services/http.service";
 
 export class CarListComponent implements OnInit {
 
-  public manufacturers: any;
+  public manufacturers: any[] = [];
 
-  constructor(private httpService : HttpService) {
+  constructor(private httpService: HttpService,
+              public dialog: MatDialog) {
   }
 
+  openDialog(car: object): void {
+    this.dialog.open(CreditDialogComponent, {data: {car}});
+  }
 
   ngOnInit(): void {
     this.httpService.getCarList().subscribe((data: any) => {
       this.manufacturers = data.manufacturers;
-    })
+    });
   }
 
 }

@@ -4,7 +4,7 @@
     <a class="link" href="#">все модели <span>{{manufacturer.name}}</span></a>
   </div>
   <div class="items-wrapper">
-    <a class="item" *ngFor="let car of manufacturer.carList">
+    <a (click)="openDialog(car)" class="item" *ngFor="let car of manufacturer.carList">
       <img src="{{car.imgSrc}}" alt="{{car.manufacturer}} {{car.model}}">
       <span>{{car.quantity}} авто</span>
       <span>{{car.model}}</span>

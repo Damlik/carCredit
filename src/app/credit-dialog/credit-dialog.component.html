@@ -1,0 +1,85 @@
+<div class="credit-wrapper">
+  <div class="header margin-bottom">
+    <h2>Расчет Кредита<span> {{data.car.manufacturer}} {{data.car.model}} {{data.car.class}}</span></h2>
+    <div class="info-wrapper">
+      <div class="img">
+        <img src="{{data.car.imgSrc}}" alt="{{data.car.manufacturer}} {{data.car.model}}">
+      </div>
+      <div class="info">
+        <div class="info-child-1">
+          <div>{{data.car.manufacturer}} {{data.car.model}} {{data.car.class}}</div>
+          <div>Скидка {{data.car.discount}}</div>
+          <div><a href="#">?</a></div>
+        </div>
+        <div class="info-child-2">
+          <div>{{data.car.engineType}} {{data.car.enginePower}}</div>
+          <div>{{data.car.driveUnitType}}</div>
+          <div>{{data.car.transmissionSteps}}</div>
+          <div>Стоимость автомобиля</div>
+        </div>
+        <div class="info-child-3">
+          <div>{{data.car.engineVolume}}</div>
+          <div>{{data.car.driveUnit}}</div>
+          <div>{{data.car.transmission}}</div>
+          <div>{{data.car.price}}</div>
+          <div><a href="#">?</a></div>
+        </div>
+      </div>
+      <div class="street"><span></span> Екатеринбург, ул. Начдива Снуфриева, 57A <span></span><span>+7(495) 777-6-505</span></div>
+    </div>
+  </div>
+  <div class="margin-bottom">
+    <h3>Настройки кредита</h3>
+    <div class="calculation">
+      <div>
+        <h4>Первоначальный взнос</h4>
+        <div>
+          <span></span>
+          <span></span>
+        </div>
+        <input type="range">
+      </div>
+      <div>
+        <h4>Готов платить в месяц</h4>
+        <div>
+          <span></span>
+          <span></span>
+        </div>
+        <input type="range">
+      </div>
+      <div>
+        <h4>Срок кредита</h4>
+        <div>
+          <span></span>
+          <span></span>
+        </div>
+        <input type="range">
+      </div>
+    </div>
+    <div class="creditApp">
+      <div>
+        <div>Сумма выплат</div>
+        <div></div>
+      </div>
+      <div>
+        <div>Процентная ставка</div>
+        <div></div>
+      </div>
+      <div>
+        <div>Платёж в месяц</div>
+        <div></div>
+      </div>
+      <button class="button">Отправить заявку</button>
+    </div>
+  </div>
+  <div>
+    <div class="credit-question">
+      <div></div>
+      <div>
+        <div>Возникли вопросы?</div>
+        <div>ответим на любые вопросы по расчету кредита</div>
+      </div>
+      <button class="button-transparent">получить консультацию</button>
+    </div>
+  </div>
+</div>

@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 
 export class HttpService{
 
   constructor(private http: HttpClient){ }
 
-  getCarList() {
-    return this.http.get('../assets/carList.json')
+  getCarList(): Observable<object> {
+    return this.http.get('../assets/carList.json');
   }
 }

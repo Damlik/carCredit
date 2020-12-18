@@ -14,9 +14,10 @@
           "driveUnit": "4x2",
           "driveUnitType": "передний",
           "engineVolume": "2.0",
-          "Transmission": "АКПП",
-          "TransmissionSteps": "6 ступеней",
-          "class": "comfort"
+          "transmission": "АКПП",
+          "transmissionSteps": "6 ступеней",
+          "class": "comfort",
+          "discount": 200000
         },
         {
           "imgSrc": "assets/img/bmw-x1.png",
@@ -29,9 +30,10 @@
           "driveUnit": "4x2",
           "driveUnitType": "задний",
           "engineVolume": "2.0",
-          "Transmission": "АКПП",
-          "TransmissionSteps": "6 ступеней",
-          "class": "comfort"
+          "transmission": "АКПП",
+          "transmissionSteps": "6 ступеней",
+          "class": "comfort",
+          "discount": 240000
         },
         {
           "imgSrc": "assets/img/bmw-x1.png",
@@ -44,9 +46,10 @@
           "driveUnit": "4x4",
           "driveUnitType": "полный",
           "engineVolume": "3.0",
-          "Transmission": "АКПП",
-          "TransmissionSteps": "6 ступеней",
-          "class": "comfort"
+          "transmission": "АКПП",
+          "transmissionSteps": "6 ступеней",
+          "class": "comfort",
+          "discount": 250000
         }
       ]
     }
