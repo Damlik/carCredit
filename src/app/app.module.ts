@@ -9,6 +9,7 @@ import { CreditDialogComponent } from './credit-dialog/credit-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SuccessCreditDialogComponent } from './success-credit-dialog/success-credit-dialog.component';
 import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule
   ],
   entryComponents: [CreditDialogComponent, SuccessCreditDialogComponent],
   providers: [],

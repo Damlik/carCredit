@@ -11,8 +11,7 @@ export class SuccessCreditDialogComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<SuccessCreditDialogComponent>) { }
 
-  // tslint:disable-next-line:typedef
-  closeDialog() {
+  closeDialog(): void {
     this.dialogRef.close();
   }
 

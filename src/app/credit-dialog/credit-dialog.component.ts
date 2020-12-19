@@ -92,12 +92,19 @@ export class CreditDialogComponent implements OnInit {
   }
 
   openDialog(): void {
-    this.dialog.open(SuccessCreditDialogComponent);
+    this.dialog.open(SuccessCreditDialogComponent,
+      {data:
+          {
+            summPaid: this.summPaid,
+            paidPerMonth: this.paidPerMonth,
+            percentRate: this.percentRate
+          }
+      });
     this.closeCreditDialog();
   }
 
-  // tslint:disable-next-line:typedef
-  closeCreditDialog() {
+
+  closeCreditDialog(): void {
     this.dialogRef.close();
   }
 

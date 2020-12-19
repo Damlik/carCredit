@@ -1,11 +1,29 @@
 .credit-wrapper {
   max-width: 1000px;
-  margin: 20px auto;
+}
+
+.header {
+  background-color: #fafafa;
+}
+
+.header h2 {
+  margin: 30px 0px 30px 0px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.header h2 span {
+  color: lightgray;
 }
 
 .info-wrapper {
   display: grid;
   grid-template-columns: 220px 600px;
+  background-color: white;
+  padding: 20px 0px 20px 0px;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .img img {
@@ -14,47 +32,177 @@
 
 .info .info-child-1 {
   display: grid;
-  grid-template-columns: 446px 105px 50px;
+  grid-template-columns: 446px 125px 50px;
+  margin-bottom: 20px;
+}
+
+.button-discount {
+  padding: 1px 5px 0px 10px;
+  border: 1px solid #ff5200;
+  background-color: #ff5200;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+.question-button {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  border: 1px;
+  background-color: lightgray;
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+.info .info-child-1 div:nth-child(1) {
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .info .info-child-2 {
   display: grid;
   grid-template-columns: 103px 66px 200px 156px;
   grid-gap: 25px;
+  margin-bottom: 10px;
+  font-size: 11px;
 }
 .info .info-child-3 {
   display: grid;
   grid-template-columns: 103px 66px 200px 135px 1fr;
   grid-gap: 25px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .street {
   display: inline-block;
-  width: 835px;
+  width: 880px;
   text-align: end;
 }
 
-.margin-bottom {
-  margin-bottom: 20px;
+.street img {
+  width: 15px;
+  height: 15px;
+}
+
+.content {
+  border-right: 20px solid #fafafa;
+}
+
+.padding-40 {
+  padding: 40px;
 }
 
 .calculation {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 277px 277px 277px;
+  grid-gap: 25px;
+  margin-bottom: 30px;
+}
+
+.calculation .calculation-div {
+  position: relative;
+  padding: 20px 30px 20px 30px;
+  border: 2px solid #fafafa;
+  border-radius: 10px;
+}
+
+.calculation-div h4 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.calculation div input {
+  position: absolute;
+  bottom: 0;
+  width: 275px;
+  height: 5px;
+  left: 0;
+  right: 0;
 }
 
 .creditApp {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 130px 150px 207px 274px;
+  grid-gap: 40px;
+}
+
+.creditApp div div:nth-child(1) {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.creditApp div div:nth-child(2) {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.creditApp div:nth-child(3) div:nth-child(2) {
+  font-weight: 600;
 }
 
 .credit-question {
   display: grid;
-  grid-template-columns: 100px 455px 170px;
+  grid-template-columns: 100px 445px 276px;
   grid-gap: 30px;
+}
+
+.credit-question div:nth-child(1) img {
+  width: 50px;
+  height: 50px;
+}
+
+.credit-question div:nth-child(2) div:nth-child(1) {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.credit-question div:nth-child(2) div:nth-child(2) {
+  font-size: 14px;
+  font-weight: 500;
+  color: lightgray;
 }
 
 .grid-values {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 150px 90px;
+  width: 280px;
+  justify-content: space-between;
+}
+
+.grid-values span:nth-child(1) {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.grid-values span:nth-child(1) span:nth-child(1) {
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
+}
+
+
+.grid-values span:nth-child(1) span:nth-child(2) {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.grid-values span:nth-child(2) {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.footer {
+  background-color: #fafafa;
+  padding-bottom: 80px;
+}
+
+.color-lightgray {
+  color: lightgray;
+}
+
+.color-black {
+  color: black;
 }
