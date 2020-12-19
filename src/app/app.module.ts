@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CarListComponent } from './car-list/car-list.component';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreditDialogComponent } from './credit-dialog/credit-dialog.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { SuccessCreditDialogComponent } from './success-credit-dialog/success-credit-dialog.component';
+import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SuccessCreditDialogComponent } from './success-credit-dialog/success-cr
     AppComponent,
     CarListComponent,
     CreditDialogComponent,
-    SuccessCreditDialogComponent
+    SuccessCreditDialogComponent,
+    CustomCurrencyPipe
   ],
   imports: [
     BrowserModule,

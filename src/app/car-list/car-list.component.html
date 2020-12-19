@@ -1,6 +1,6 @@
 <div class="wrapper-car-list" *ngFor="let manufacturer of manufacturers">
   <div class="block">
-    <span class="text-bold">{{manufacturer.name}}</span>
+    <span class="manufacturer">{{manufacturer.name}} <span>{{this.quantityCarSumm}}</span></span>
     <a class="link" href="#">все модели <span>{{manufacturer.name}}</span></a>
   </div>
   <div class="items-wrapper">
@@ -8,7 +8,7 @@
       <img src="{{car.imgSrc}}" alt="{{car.manufacturer}} {{car.model}}">
       <span>{{car.quantity}} авто</span>
       <span>{{car.model}}</span>
-      <span>{{car.price | currency : 'RUB' : 'symbol-narrow'}}</span>
+      <span>от {{car.price | customCurrency}}</span>
     </a>
   </div>
 </div>

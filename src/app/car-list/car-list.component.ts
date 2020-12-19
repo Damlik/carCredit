@@ -12,6 +12,7 @@ import {CreditDialogComponent} from '../credit-dialog/credit-dialog.component';
 
 export class CarListComponent implements OnInit {
 
+  public quantityCarSumm = 0;
   public manufacturers: any[] = [];
 
   constructor(private httpService: HttpService,
@@ -22,9 +23,16 @@ export class CarListComponent implements OnInit {
     this.dialog.open(CreditDialogComponent, {data: {car}});
   }
 
+  quantityCarSummCalc(): void {
+    for (let car of this.manufacturers[0].carList) {
+      this.quantityCarSumm = this.quantityCarSumm + car.quantity;
+    }
+  }
+
   ngOnInit(): void {
     this.httpService.getCarList().subscribe((data: any) => {
       this.manufacturers = data.manufacturers;
+      this.quantityCarSummCalc();
     });
   }
 
