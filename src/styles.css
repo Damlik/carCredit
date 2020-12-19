@@ -6,4 +6,24 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.button {
+  padding: 5px 45px 5px 45px;
+  text-align: center;
+  background-color: #ff5200;
+  height: 45px;
+  border: 2px solid #ff5200;
+  border-radius: 10px;
+  color: white;
+}
+
+.button-transparent {
+  padding: 5px 45px 5px 45px;
+  text-align: center;
+  background-color: Transparent;
+  height: 45px;
+  border: 2px solid #ff5200;
+  border-radius: 10px;
+  color: #ff5200;
+}
+
 html, body { height: 100%; }

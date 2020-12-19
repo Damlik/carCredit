@@ -1,5 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
+import {SuccessCreditDialogComponent} from '../success-credit-dialog/success-credit-dialog.component';
+
 
 @Component({
   selector: 'app-credit-dialog',
@@ -22,7 +25,9 @@ export class CreditDialogComponent implements OnInit {
   public paidPerMonth = 9800;
   public percentRate = 18.3;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any,
+              private dialog: MatDialog,
+              public dialogRef: MatDialogRef<CreditDialogComponent>) { }
 
   initialFee(): void {
     const min = 10;
@@ -84,6 +89,16 @@ export class CreditDialogComponent implements OnInit {
 
   calcSummPaid(): void {
     this.summPaid = this.valuePayPerMonth * this.valueTermCredit;
+  }
+
+  openDialog(): void {
+    this.dialog.open(SuccessCreditDialogComponent);
+    this.closeCreditDialog();
+  }
+
+  // tslint:disable-next-line:typedef
+  closeCreditDialog() {
+    this.dialogRef.close();
   }
 
   ngOnInit(): void {

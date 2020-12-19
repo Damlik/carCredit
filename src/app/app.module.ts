@@ -7,13 +7,15 @@ import {HttpClientModule} from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreditDialogComponent } from './credit-dialog/credit-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { SuccessCreditDialogComponent } from './success-credit-dialog/success-credit-dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CarListComponent,
-    CreditDialogComponent
+    CreditDialogComponent,
+    SuccessCreditDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     BrowserAnimationsModule,
     MatDialogModule
   ],
-  entryComponents: [CreditDialogComponent],
+  entryComponents: [CreditDialogComponent, SuccessCreditDialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

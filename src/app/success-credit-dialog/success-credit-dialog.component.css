@@ -1,0 +1,21 @@
+.success-dialog {
+  padding: 30px;
+  display: grid;
+  grid-template-rows: 240px 50px 50px 50px;
+  justify-items: center;
+}
+
+.success-dialog img {
+  width: 250px;
+}
+
+.success-dialog span:nth-child(2) {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.success-dialog span:nth-child(3) {
+  font-size: 13px;
+  color: lightgray;
+}
+
