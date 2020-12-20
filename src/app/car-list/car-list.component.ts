@@ -3,7 +3,7 @@ import { HttpService } from '../services/http.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreditDialogComponent } from '../credit-dialog/credit-dialog.component';
 import { Car } from '../models/car';
-import { Manufacturers } from '../models/manufacturers';
+import { CarListApiResponse } from '../models/carListApiResponse';
 import { Manufacturer } from '../models/manufacturer';
 
 
@@ -33,7 +33,7 @@ export class CarListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.httpService.getCarList().subscribe((data: Manufacturers) => {
+    this.httpService.getCarList().subscribe((data: CarListApiResponse) => {
       this.manufacturers = data.manufacturers;
       this.quantityCarSummCalc();
     });

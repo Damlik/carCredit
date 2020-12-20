@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatDialog } from '@angular/material/dialog';
 import { SuccessCreditDialogComponent } from '../success-credit-dialog/success-credit-dialog.component';
 import { Car } from '../models/car';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -14,13 +15,12 @@ export class CreditDialogComponent implements OnInit {
   public minInitialFee = 0;
   public maxInitialFee = 0;
   public stepInitialFee = 0;
-  public valueInitialFee = 0;
+  public valueInitialFee: FormControl;
   public percentValueInitialFee = 10;
-  public valuePayPerMonth = 1000;
-  public valueTermCredit = 600;
+  public payPerMonth: FormControl;
+  public creditTerm: FormControl;
   public maxValueTermCredit = 600;
   public maxvaluePayPerMonth = 50000;
-  public ramainder = this.car.price - this.car.discount;
   public year = 50;
   public amountOfPayment = 600000;
   public monthPayment = 9800;
@@ -28,69 +28,65 @@ export class CreditDialogComponent implements OnInit {
 
   constructor(@Inject(MAT_DIALOG_DATA) public car: Car,
               private dialog: MatDialog,
-              public dialogRef: MatDialogRef<CreditDialogComponent>
-  ) { }
+              public dialogRef: MatDialogRef<CreditDialogComponent>,
+  ) {
+    this.valueInitialFee = new FormControl(Math.round(this.car.price * 0.1));
+    this.payPerMonth = new FormControl(1000);
+    this.creditTerm = new FormControl(600);
+    this.initializeFormSubscriptions();
+  }
 
-  initialFee(): void {
+
+  initInitialFee(): void {
     const min = 10;
     const max = 90;
     const step = 5;
     this.minInitialFee = this.car.price * min / 100;
     this.maxInitialFee = this.car.price * max / 100;
     this.stepInitialFee =  this.car.price * step / 100;
-    this.valueInitialFee = Math.round(this.minInitialFee);
-    this.ramainder = this.car.price - this.car.discount - this.valueInitialFee;
   }
 
-  changeValueInitialFee(event: any): void {
-    this.ramainder = this.car.price - this.car.discount - this.valueInitialFee;
-    this.valueInitialFee = Math.round(event.target.value);
-    this.percentValueInitialFee = Math.round((event.target.value / this.car.price) * 100);
-    this.creditProgramm();
-  }
+  initializeFormSubscriptions(): void {
+    this.valueInitialFee.valueChanges.subscribe((value: number) => {
+      this.percentValueInitialFee = Math.round((value / this.car.price) * 100);
+      this.creditProgramm();
+    });
 
-  changeValuePayPerMonth(event: any): void {
-    this.valuePayPerMonth = +event.target.value;
-    this.valueTermCredit = this.maxValueTermCredit - (this.valuePayPerMonth / 1000) * 12 + 12;
-    this.year = this.valueTermCredit / 12;
-    this.creditProgramm();
-  }
+    this.payPerMonth.valueChanges.subscribe((value: number) => {
+      this.creditTerm.setValue( this.maxValueTermCredit - (value / 1000) * 12 + 12, {emitEvent: false});
+      this.year = this.creditTerm.value / 12;
+      this.creditProgramm();
+    });
 
-  declensionOfNumbers(number: number): string {
-    const titles = ['год', 'года', 'лет'];
-    const cases = [2, 0, 1, 1, 1, 2];
-    return number + ' ' + titles[ (number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5] ];
-  }
-
-  changeValueTermCredit(event: any): void {
-    this.valueTermCredit = event.target.value;
-    this.year = this.valueTermCredit / 12;
-    this.valuePayPerMonth = this.maxvaluePayPerMonth - this.year * 1000 + 1000;
-    this.creditProgramm();
+    this.creditTerm.valueChanges.subscribe((value: number) => {
+      this.year = value / 12;
+      this.payPerMonth.setValue(this.maxvaluePayPerMonth - this.year * 1000 + 1000, {emitEvent: false});
+      this.creditProgramm();
+    });
   }
 
   creditProgramm(): void {
     this.calculationAmountOfPayment();
-    if (this.valueInitialFee > 200000 && this.valuePayPerMonth < 10000 && this.valueTermCredit > 400) {
+    if (this.valueInitialFee.value > 200000 && this.payPerMonth.value < 10000 && this.creditTerm.value > 400) {
       this.percentRate = 18.3;
       this.monthPayment = 9800;
-    } else if (this.valueInitialFee > 400000 && this.valuePayPerMonth < 20000 && this.valueTermCredit > 300) {
+    } else if (this.valueInitialFee.value > 400000 && this.payPerMonth.value < 20000 && this.creditTerm.value > 300) {
       this.percentRate = 16.2;
       this.monthPayment = 18200;
-    } else if (this.valueInitialFee > 600000 && this.valuePayPerMonth < 30000 && this.valueTermCredit > 200) {
+    } else if (this.valueInitialFee.value > 600000 && this.payPerMonth.value < 30000 && this.creditTerm.value > 200) {
       this.percentRate = 14.6;
       this.monthPayment = 25500;
-    } else if (this.valueInitialFee > 800000 && this.valuePayPerMonth < 40000 && this.valueTermCredit > 100) {
+    } else if (this.valueInitialFee.value > 800000 && this.payPerMonth.value < 40000 && this.creditTerm.value > 100) {
       this.percentRate = 12.3;
       this.monthPayment = 37100;
-    } else if (this.valueInitialFee > 1000000 && this.valuePayPerMonth <= 50000 && this.valueTermCredit > 50) {
+    } else if (this.valueInitialFee.value > 1000000 && this.payPerMonth.value <= 50000 && this.creditTerm.value > 50) {
       this.percentRate = 10.8;
       this.monthPayment = 44900;
     }
   }
 
   calculationAmountOfPayment(): void {
-    this.amountOfPayment = this.valuePayPerMonth * this.valueTermCredit;
+    this.amountOfPayment = this.payPerMonth.value * this.creditTerm.value;
   }
 
   openDialog(): void {
@@ -105,13 +101,12 @@ export class CreditDialogComponent implements OnInit {
     this.closeCreditDialog();
   }
 
-
   closeCreditDialog(): void {
     this.dialogRef.close();
   }
 
   ngOnInit(): void {
-    this.initialFee();
+    this.initInitialFee();
   }
 
 }

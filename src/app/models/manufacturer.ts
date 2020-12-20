@@ -1,6 +1,6 @@
 import { Car } from './car';
 
-export interface Manufacturer extends Car {
+export interface Manufacturer {
   name: string;
   carList: Array<Car>;
 }

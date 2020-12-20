@@ -1,5 +1,5 @@
 import {Manufacturer} from './manufacturer';
 
-export interface Manufacturers extends Manufacturer {
+export interface CarListApiResponse {
   manufacturers: Array<Manufacturer>;
 }

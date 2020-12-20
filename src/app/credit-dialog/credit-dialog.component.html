@@ -36,28 +36,43 @@
         <div class="calculation-div">
           <h4 class="color-lightgray">Первоначальный взнос</h4>
           <div class="grid-values">
-            <span>{{valueInitialFee | customCurrency}}</span>
+            <span>{{valueInitialFee.value | customCurrency}}</span>
             <span class="color-lightgray">{{percentValueInitialFee}}%</span>
           </div>
-          <input (input)="changeValueInitialFee($event)" min="{{minInitialFee}}" max="{{maxInitialFee}}"
-                 step="{{stepInitialFee}}" value="{{valueInitialFee}}" type="range">
+          <input
+            [formControl]="valueInitialFee"
+            min="{{minInitialFee}}"
+            max="{{maxInitialFee}}"
+            step="{{stepInitialFee}}"
+            type="range"
+          >
         </div>
         <div class="calculation-div">
           <h4 class="color-lightgray">Готов платить в месяц</h4>
           <div class="grid-values">
-            <span>До {{valuePayPerMonth | customCurrency}}</span>
+            <span>До {{payPerMonth.value | customCurrency}}</span>
           </div>
-          <input (input)="changeValuePayPerMonth($event)" min="1000" max="{{maxvaluePayPerMonth}}" step="1000"
-                 value="{{valuePayPerMonth}}" type="range">
+          <input
+            [formControl]="payPerMonth"
+            min="1000"
+            max="{{maxvaluePayPerMonth}}"
+            step="1000"
+            type="range"
+          >
         </div>
         <div class="calculation-div color-lightgray">
           <h4>Срок кредита</h4>
           <div class="grid-values">
-            <span><span>{{valueTermCredit}}</span> <span> месяцев</span></span>
-            <span>{{declensionOfNumbers(year)}}</span>
+            <span><span>{{creditTerm.value}}</span> <span> месяцев</span></span>
+            <span>{{year | year}}</span>
           </div>
-          <input (input)="changeValueTermCredit($event)" max="{{maxValueTermCredit}}" min="12" step="12"
-                 value="{{valueTermCredit}}" type="range">
+          <input
+            [formControl]="creditTerm"
+            max="{{maxValueTermCredit}}"
+            min="12"
+            step="12"
+            type="range"
+          >
         </div>
       </div>
       <div class="creditApp">

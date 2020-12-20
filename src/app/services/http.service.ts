@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Manufacturers } from '../models/manufacturers';
+import { CarListApiResponse } from '../models/carListApiResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class HttpService{
 
   constructor( private http: HttpClient ){ }
 
-  getCarList(): Observable<Manufacturers> {
-    return this.http.get<Manufacturers>('../assets/carList.json');
+  getCarList(): Observable<CarListApiResponse> {
+    return this.http.get<CarListApiResponse>('../assets/carList.json');
   }
 }

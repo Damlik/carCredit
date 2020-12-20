@@ -6,8 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CustomCurrencyPipe implements PipeTransform {
   transform(value: number, month?: boolean): string {
     if (month) {
-      return value.toLocaleString('ru') + ' ₽/мес';
+      return Math.round(value).toLocaleString('ru') + ' ₽/мес';
     }
-    return value.toLocaleString('ru') + ' ₽';
+    return Math.round(value).toLocaleString('ru') + ' ₽';
   }
 }

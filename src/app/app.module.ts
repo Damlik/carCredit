@@ -9,7 +9,8 @@ import { CreditDialogComponent } from './credit-dialog/credit-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SuccessCreditDialogComponent } from './success-credit-dialog/success-credit-dialog.component';
 import { CustomCurrencyPipe } from './pipes/custom-currency.pipe';
-import {FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { YearPipe } from './pipes/year.pipe';
 
 
 @NgModule({
@@ -18,14 +19,16 @@ import {FormsModule} from '@angular/forms';
     CarListComponent,
     CreditDialogComponent,
     SuccessCreditDialogComponent,
-    CustomCurrencyPipe
+    CustomCurrencyPipe,
+    YearPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   entryComponents: [CreditDialogComponent, SuccessCreditDialogComponent],
   providers: [],

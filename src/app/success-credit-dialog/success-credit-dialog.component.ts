@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {CreditProgramm} from '../models/creditProgramm';
+import {CreditProgram} from '../models/creditProgram';
 
 @Component({
   selector: 'app-success-credit-dialog',
@@ -11,10 +11,10 @@ export class SuccessCreditDialogComponent implements OnInit {
 
 
   constructor(private dialogRef: MatDialogRef<SuccessCreditDialogComponent>,
-              @Inject (MAT_DIALOG_DATA) private creditProgramm: CreditProgramm) { }
+              @Inject (MAT_DIALOG_DATA) private creditProgram: CreditProgram) { }
 
   log(): void {
-    console.log(this.creditProgramm);
+    console.log(this.creditProgram);
   }
 
   closeDialog(): void {

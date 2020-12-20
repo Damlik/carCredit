@@ -1,4 +1,4 @@
-export interface CreditProgramm {
+export interface CreditProgram {
   amountOfPayment: number;
   monthPayment: number;
   percentRate: number;
