@@ -1,27 +1,27 @@
 <div class="credit-wrapper">
   <div class="header padding-40">
-    <h2>Расчет Кредита <span> {{data.car.manufacturer}} {{data.car.model}} {{data.car.class}}</span></h2>
+    <h2>Расчет Кредита <span> {{car.manufacturer}} {{car.model}} {{car.class}}</span></h2>
     <div class="info-wrapper">
       <div class="img">
-        <img src="{{data.car.imgSrc}}" alt="{{data.car.manufacturer}} {{data.car.model}}">
+        <img src="{{car.imgSrc}}" alt="{{car.manufacturer}} {{car.model}}">
       </div>
       <div class="info">
         <div class="info-child-1">
-          <div>{{data.car.manufacturer}} {{data.car.model}} <span class="color-lightgray">{{data.car.class}}</span></div>
-          <div class="button-discount">Скидка {{data.car.discount}}</div>
+          <div>{{car.manufacturer}} {{car.model}} <span class="color-lightgray">{{car.class}}</span></div>
+          <div class="button-discount">Скидка {{car.discount}}</div>
           <div><a class="question-button" href="#">?</a></div>
         </div>
         <div class="info-child-2 color-lightgray">
-          <div>{{data.car.engineType}} {{data.car.enginePower}}</div>
-          <div>{{data.car.driveUnitType}}</div>
-          <div>{{data.car.transmissionSteps}}</div>
+          <div>{{car.engineType}} {{car.enginePower}}</div>
+          <div>{{car.driveUnitType}}</div>
+          <div>{{car.transmissionSteps}}</div>
           <div>Стоимость автомобиля</div>
         </div>
         <div class="info-child-3 color-lightgray">
-          <div>{{data.car.engineVolume}}</div>
-          <div>{{data.car.driveUnit}}</div>
-          <div>{{data.car.transmission}}</div>
-          <div class="color-black">{{data.car.price | customCurrency}}</div>
+          <div>{{car.engineVolume}}</div>
+          <div>{{car.driveUnit}}</div>
+          <div>{{car.transmission}}</div>
+          <div class="color-black">{{car.price | customCurrency}}</div>
           <div><a class="question-button" href="#">?</a></div>
         </div>
       </div>
@@ -54,7 +54,7 @@
           <h4>Срок кредита</h4>
           <div class="grid-values">
             <span><span>{{valueTermCredit}}</span> <span> месяцев</span></span>
-            <span>{{declOfNum(year)}}</span>
+            <span>{{declensionOfNumbers(year)}}</span>
           </div>
           <input (input)="changeValueTermCredit($event)" max="{{maxValueTermCredit}}" min="12" step="12"
                  value="{{valueTermCredit}}" type="range">
@@ -63,7 +63,7 @@
       <div class="creditApp">
         <div class="color-lightgray">
           <div>Сумма выплат</div>
-          <div>от {{this.summPaid | customCurrency}}</div>
+          <div>от {{this.amountOfPayment | customCurrency}}</div>
         </div>
         <div class="color-lightgray">
           <div>Процентная ставка</div>
@@ -71,7 +71,7 @@
         </div>
         <div>
           <div class="color-lightgray">Платёж в месяц</div>
-          <div>от {{this.paidPerMonth | customCurrency: true}}</div>
+          <div>от {{this.monthPayment | customCurrency: true}}</div>
         </div>
         <input type="submit" class="button" value="Отправить заявку">
       </div>

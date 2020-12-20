@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../services/http.service';
-import {MatDialog} from '@angular/material/dialog';
-import {CreditDialogComponent} from '../credit-dialog/credit-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { CreditDialogComponent } from '../credit-dialog/credit-dialog.component';
+import { Car } from '../models/car';
+import { Manufacturers } from '../models/manufacturers';
+import { Manufacturer } from '../models/manufacturer';
 
 
 @Component({
@@ -13,14 +16,14 @@ import {CreditDialogComponent} from '../credit-dialog/credit-dialog.component';
 export class CarListComponent implements OnInit {
 
   public quantityCarSumm = 0;
-  public manufacturers: any[] = [];
+  public manufacturers: Array<Manufacturer> = [];
 
   constructor(private httpService: HttpService,
               public dialog: MatDialog) {
   }
 
-  openDialog(car: object): void {
-    this.dialog.open(CreditDialogComponent, {data: {car}});
+  openDialog(car: Car): void {
+    this.dialog.open(CreditDialogComponent, {data: car});
   }
 
   quantityCarSummCalc(): void {
@@ -30,7 +33,7 @@ export class CarListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.httpService.getCarList().subscribe((data: any) => {
+    this.httpService.getCarList().subscribe((data: Manufacturers) => {
       this.manufacturers = data.manufacturers;
       this.quantityCarSummCalc();
     });
